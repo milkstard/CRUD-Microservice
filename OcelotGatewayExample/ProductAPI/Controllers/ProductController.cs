@@ -4,10 +4,12 @@ using ProductAPI.Models;
 
 namespace ProductAPI.Controllers
 {
-    public class ProductCotnroller : ControllerBase
+    [Route("api/[controller]")]
+    [ApiController]
+    public class ProductController : ControllerBase
     {
         private readonly IProductService productService;
-        public ProductCotnroller(IProductService _productService) 
+        public ProductController(IProductService _productService) 
         {
             productService = _productService;
         }
