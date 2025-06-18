@@ -9,4 +9,5 @@ import { Component } from '@angular/core';
 })
 export class HomepageComponent {
 
+  title: string = "Ocelot Gateway Microservices Demo";
 }
