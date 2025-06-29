@@ -3,7 +3,6 @@ using Ocelot.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.WebHost.UseUrls("https://localhost:7283");
 // Add services to the container.
 builder.Services.AddCors(options =>
 {
