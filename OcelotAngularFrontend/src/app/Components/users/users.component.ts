@@ -2,15 +2,16 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
+import { ToastrModule, ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
 import { User } from '../../Data/Models/User';
 import { UsersService } from '../../Data/Services/users.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'ocelot-users',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule,RouterModule],
+  imports: [CommonModule, ReactiveFormsModule,RouterModule, HttpClientModule],
   templateUrl: './users.component.html',
   styleUrl: './users.component.css'
 })

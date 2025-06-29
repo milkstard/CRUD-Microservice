@@ -5,12 +5,13 @@ import { ProductsService } from '../../Data/Services/products.service';
 import { Product } from '../../Data/Models/Product';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
+import { ToastrModule, ToastrService } from 'ngx-toastr';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'ocelot-products',
   standalone: true,
-  imports: [CommonModule, RouterModule, ReactiveFormsModule],
+  imports: [CommonModule, RouterModule, ReactiveFormsModule, HttpClientModule],
   templateUrl: './products.component.html',
   styleUrl: './products.component.css'
 })
