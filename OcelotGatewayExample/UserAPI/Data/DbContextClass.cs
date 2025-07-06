@@ -17,6 +17,16 @@ namespace UserAPI.Data
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
         }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<UserScopes>()
+                .HasKey(us => us.UserScopeId);
+
+            modelBuilder.Entity<User>()
+                .HasMany(u => u.UserScopes)
+                .WithMany(us => us.User)
+                .UsingEntity(u_us => u_us.ToTable("User_UserScopes"));
+        }
         public DbSet<User> Users { get; set; }
     }
 }

@@ -22,7 +22,7 @@ namespace UserAPI.Services
             {
                 new Claim(JwtRegisteredClaimNames.Name, userLogin.UserName),
                 new Claim("role", userLogin.Role),
-                new Claim("scope", string.Join(" ", userLogin.Scopes))
+                new Claim("scope", string.Join(" ", userLogin.Scopes.Scope))
             };
             //Header and payload will implicitly goes to their own class with the use of JwtSecurityToken class
             var tokenOptions = new JwtSecurityToken(
